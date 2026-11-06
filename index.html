@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6d3b72">
+  <title>Women's Safety Alert System | ML Prototype</title>
+  <style>
+    :root{--ink:#292235;--muted:#6d6675;--plum:#6d3b72;--pink:#f7eaf3;--lav:#f2effb;--white:#fff;--line:#eee6ef}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--ink);background:#fff;line-height:1.6}
+    a{color:inherit} .wrap{width:min(1080px,92%);margin:auto}
+    header{padding:18px 0;border-bottom:1px solid var(--line);background:#fff}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .brand{font-weight:800;color:var(--plum);letter-spacing:.2px}.navlinks{display:flex;gap:22px;flex-wrap:wrap}
+    .navlinks a{text-decoration:none;color:var(--muted);font-size:.94rem}.navlinks a:hover{color:var(--plum)}
+    .hero{padding:76px 0 64px;background:linear-gradient(120deg,#fbf3f8,#f5f1fc)}
+    .eyebrow{color:var(--plum);font-weight:750;text-transform:uppercase;letter-spacing:1.6px;font-size:.78rem}
+    h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.08;max-width:760px;margin:14px 0 18px}
+    .lead{font-size:1.12rem;color:var(--muted);max-width:720px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-block;padding:12px 19px;border-radius:999px;text-decoration:none;font-weight:700;border:1px solid var(--plum)}
+    .primary{background:var(--plum);color:#fff}.secondary{color:var(--plum);background:#fff}
+    section{padding:58px 0}.section-title{font-size:1.8rem;margin:0 0 10px}.sub{color:var(--muted);margin:0 0 26px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{padding:23px;border:1px solid var(--line);border-radius:18px;background:#fff;box-shadow:0 8px 24px rgba(50,30,60,.04)}
+    .card h3{margin:8px 0}.icon{font-size:1.5rem}.card p{color:var(--muted);margin-bottom:0}
+    .results{background:#fcf9fc}.metric{font-size:2rem;font-weight:800;color:var(--plum);line-height:1.2}
+    .notice{background:#fff7e8;border:1px solid #f1dfb7;padding:18px 20px;border-radius:14px;color:#5c4827}
+    .notice strong{display:block;margin-bottom:4px}
+    .steps{padding-left:20px;color:var(--muted)}.steps li{margin:8px 0}
+    footer{padding:26px 0;background:#2e2635;color:#eee;text-align:center;font-size:.9rem}
+    footer a{color:#fff}
+    @media(max-width:720px){.grid{grid-template-columns:1fr}.hero{padding:54px 0}.navlinks{gap:12px}.navlinks a{font-size:.85rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <nav aria-label="Main navigation">
+        <div class="brand">✦ Women's Safety Project</div>
+        <div class="navlinks">
+          <a href="#about">About</a><a href="#models">ML Models</a><a href="#safety">Safety note</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap">
+        <div class="eyebrow">Educational machine-learning prototype</div>
+        <h1>Awareness, preparedness, and safer journeys.</h1>
+        <p class="lead">An introductory project exploring how classification models can analyse example travel-safety scenarios. It compares a Decision Tree with K-Nearest Neighbors (KNN) using a synthetic educational dataset.</p>
+        <div class="actions">
+          <a class="btn primary" href="Womens_Safety_ML_Project.ipynb">Open the ML notebook</a>
+          <a class="btn secondary" href="synthetic_safety_scenarios.csv" download>View dataset</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap">
+        <h2 class="section-title">About the project</h2>
+        <p class="sub">A beginner-friendly demonstration of a machine-learning workflow—not a live emergency service.</p>
+        <div class="grid">
+          <article class="card"><div class="icon">🧭</div><h3>Project idea</h3><p>Explore scenario factors such as lighting, transport availability, travelling alone, and access to help.</p></article>
+          <article class="card"><div class="icon">🧪</div><h3>Data preparation</h3><p>Load a synthetic CSV dataset, inspect missing values, and prepare input features and a target label.</p></article>
+          <article class="card"><div class="icon">📊</div><h3>Model comparison</h3><p>Train two beginner classification models and compare their accuracy and confusion matrices.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="results" id="models">
+      <div class="wrap">
+        <h2 class="section-title">Model results</h2>
+        <p class="sub">Reported results from the notebook's fixed test split.</p>
+        <div class="grid">
+          <article class="card"><h3>Decision Tree</h3><div class="metric">74.2%</div><p>Accuracy on the synthetic test split.</p></article>
+          <article class="card"><h3>K-Nearest Neighbors</h3><div class="metric">73.3%</div><p>Accuracy on the synthetic test split.</p></article>
+          <article class="card"><h3>Higher score</h3><div class="metric">Tree</div><p>The Decision Tree scored slightly higher on this particular split.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="safety">
+      <div class="wrap">
+        <h2 class="section-title">Important safety information</h2>
+        <div class="notice">
+          <strong>This prototype does not detect real danger or send SOS alerts.</strong>
+          The dataset is synthetic, and its labels are illustrative—not real incident data or a validated measure of risk. Accuracy scores here do not establish real-world safety performance.
+        </div>
+        <ol class="steps">
+          <li>For immediate danger, contact local emergency services or a trusted person directly.</li>
+          <li>Never wait for an ML result before seeking help or using an emergency option.</li>
+          <li>A real alert feature would need careful consent, permissions, privacy protections, and reliable testing.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <h2 class="section-title">Run the project</h2>
+        <p class="sub">The machine-learning code runs in Python through Jupyter or Google Colab; this webpage is a project overview.</p>
+        <ol class="steps">
+          <li>Open <a href="Womens_Safety_ML_Project.ipynb">the notebook</a> in Google Colab or Jupyter.</li>
+          <li>Keep <code>synthetic_safety_scenarios.csv</code> in the same working folder (or upload it to Colab).</li>
+          <li>Install dependencies with <code>python -m pip install -r requirements.txt</code> if running locally.</li>
+          <li>Run the notebook cells to reproduce the model comparison.</li>
+        </ol>
+        <div class="actions">
+          <a class="btn primary" href="Womens_Safety_ML_Project.ipynb">View notebook</a>
+          <a class="btn secondary" href="README.md">Read README</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">Women's Safety Alert System — Educational ML Prototype · Built with HTML, CSS, and JavaScript-ready structure</div>
+  </footer>
+</body>
+</html>
